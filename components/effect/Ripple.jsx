@@ -11,7 +11,6 @@ function Ripple(props) {
             rippleContainer.width > rippleContainer.height
                 ? rippleContainer.width
                 : rippleContainer.height;
-        console.log(event);
         const x = event.clientX - rippleContainer.x - size / 2;
         const y = event.clientY - rippleContainer.y - size / 2;
         const newRipple = {

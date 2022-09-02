@@ -1,30 +1,41 @@
 import Head from 'next/head'
 import Navbar from "../components/Navbar";
 import Ripple from "../components/effect/Ripple";
-import React from "react";
+import React, {useEffect} from "react";
 import Button from "../components/effect/Button";
 import {
     faClock,
     faGaugeHigh,
     faHandPointer,
-    faICursor,
-    faMortarBoard,
-    faMousePointer
+    faMortarBoard
 } from "@fortawesome/free-solid-svg-icons";
 import Counter from "../components/counter/Counter";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 export default function Home() {
+    let defaultTimeLeft = 10;
     let [count, setCount] = React.useState(0);
-    let [countsPerSecond, setCountsPerSecond] = React.useState(0.0);
+    let [countsPerSecond, setCountsPerSecond] = React.useState(null);
+    let [startTime, setStartTime] = React.useState(0);
+    let [timeLeft, setTimeLeft] = React.useState(defaultTimeLeft);
 
     React.useEffect(() => {
-        const interval = setInterval(() => {
-            console.log("hey")
-        }, 1000);
-        return () => clearInterval(interval);
+        if (count === 1) {
+            setStartTime(Date.now());
+        }
+
     }, [count]);
+
+    useEffect(() => {
+        if (count > 0 && timeLeft >= 0) {
+            let interval = setInterval(() => {
+                setTimeLeft(timeLeft - 1);
+                setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
+                clearInterval(interval);
+            }, 1000);
+        }
+    })
 
     function handleClick(e) {
         setCount(count + 1);
@@ -50,24 +61,29 @@ export default function Home() {
                     <div>
                         <div className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
                             <div className={"flex flex-row bg-gray-800 text-white"}>
-                                <Counter icon={faClock} title={"Time"} value={"0.00"} color={'#88d640'}/>
-                                <Counter icon={faGaugeHigh} title={"Time"} value={countsPerSecond || '0.00'} color={'#f2d82e'}/>
-                                <Counter icon={faMortarBoard} title={"Score"} value={count || '0.00'} color={'#408bd6'}/>
+                                <Counter icon={faClock} title={"Time"} value={timeLeft.toFixed(2) || '0.00'}
+                                         color={'#88d640'}/>
+                                <Counter icon={faGaugeHigh} title={"Click/Secs"} value={countsPerSecond || '0.00'}
+                                         color={'#f2d82e'}/>
+                                <Counter icon={faMortarBoard} title={"Score"} value={count || '0.00'}
+                                         color={'#408bd6'}/>
                             </div>
 
-                            <div onContextMenu={(event)=>{event.preventDefault();}}
+                            <div onContextMenu={(event) => {
+                                event.preventDefault();
+                            }}
                                  onMouseDown={handleClick}
                                  className={"relative w-full h-[479px] " +
-                                "bg-slate-200 dark:bg-slate-700 overflow-hidden"}>
+                                     "bg-slate-200 dark:bg-slate-700 overflow-hidden"}>
                                 <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                  h-full bg-slate-300/30 grid place-items-center`}>
-                                   <div className={"flex flex-col gap-4"}>
-                                       <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
-                                       <p>Click to Start Speed Clicking CPS Test</p>
-                                   </div>
+                                    <div className={"flex flex-col gap-4"}>
+                                        <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
+                                        <p>Click to Start Speed Clicking CPS Test</p>
+                                    </div>
                                 </div>
                                 <Button>
-                                    <Ripple color={"blue"} duration={700} />
+                                    <Ripple color={"blue"} duration={700}/>
                                 </Button>
                             </div>
 

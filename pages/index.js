@@ -14,22 +14,25 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import BigButton from "../components/BigButton";
+import getRank from "../helpers/rank";
 
 
 export default function Home() {
-    let [defaultTimeLeft, setDefaultTime] = React.useState(10);
+    let [defaultTimeLeft, setDefaultTime] = React.useState(3);
     let [count, setCount] = React.useState(0);
     let [countsPerSecond, setCountsPerSecond] = React.useState(null);
     let [startTime, setStartTime] = React.useState(0);
     let [timeLeft, setTimeLeft] = React.useState(defaultTimeLeft);
     let [finished, setFinished] = React.useState(false);
+    let [rank, setRank] = React.useState(false);
+
 
     function start(e) {
         setCount(0);
+        setFinished(false);
         setCountsPerSecond(null);
         setStartTime(Date.now());
         setTimeLeft(defaultTimeLeft);
-        setFinished(false);
     }
 
     React.useEffect(() => {
@@ -41,17 +44,27 @@ export default function Home() {
 
     useEffect(() => {
         if (count > 0 && timeLeft >= 1) {
-            let interval = setInterval(() => {
+            let timer = setInterval(() => {
                 setTimeLeft(timeLeft - 1);
-                setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
-                clearInterval(interval);
+                clearInterval(timer);
             }, 1000);
+
+            let counter = setInterval(() => {
+                setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
+                clearInterval(counter);
+            }, 100);
         } else {
             if (timeLeft <= 0) {
                 setFinished(true);
             }
         }
-    })
+    }, [count, timeLeft, startTime, countsPerSecond])
+
+    useEffect(() => {
+        if (finished) {
+            setRank(getRank(countsPerSecond));
+        }
+    }, [finished]);
 
     function handleClick(e) {
         setCount(count + 1);
@@ -85,39 +98,49 @@ export default function Home() {
                                          color={'#ad92ff'} shadow={'#6c55eb'}/>
                             </div>
 
-                            {!finished ? <div onContextMenu={(event) => {event.preventDefault();}}
-                                 onMouseDown={handleClick}
-                                 className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
+                            {!finished ? <div onContextMenu={(event) => {
+                                    event.preventDefault();
+                                }}
+                                              onMouseDown={handleClick}
+                                              className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
 
-                                <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
+                                    <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                  h-full bg-slate-300/30 grid place-items-center`}>
-                                    <div className={"flex flex-col gap-4"}>
-                                        <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
-                                        <p>Click to Start Speed Clicking CPS Test</p>
+                                        <div className={"flex flex-col gap-4"}>
+                                            <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
+                                            <p>Click to Start Speed Clicking CPS Test</p>
+                                        </div>
+                                    </div>
+                                    <RippleButton>
+                                        <Ripple color={"#359dde"} duration={700}/>
+                                    </RippleButton>
+                                </div>
+                                :
+                                <div
+                                    onContextMenu={(event) => {
+                                        event.preventDefault();
+                                    }}
+                                    className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
+                                    <div className={"text-center"}>
+                                        <div>
+                                            <h2 className={"text-6xl font-bold"}>{rank.name}</h2>
+                                            <h3 className={"text-xl"}>Your CPS result
+                                                is {countsPerSecond} ({count} Clicks
+                                                in {defaultTimeLeft} Seconds)</h3>
+                                        </div>
+                                        <div className={"my-3"}>
+                                            <Image src={rank.icon} layout={"intrinsic"} width={180} height={180}
+                                                  className={""} draggable={"false"}/>
+                                        </div>
+                                        <div>
+                                            <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
+                                        </div>
+                                        {finished &&
+                                            <button onClick={start}>
+                                                <BigButton/>
+                                            </button>}
                                     </div>
                                 </div>
-                                <RippleButton>
-                                    <Ripple color={"#359dde"} duration={700}/>
-                                </RippleButton>
-                            </div>
-                            :
-                            <div
-                                onContextMenu={(event) => {event.preventDefault();}}
-                                className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
-                                <div className={"text-center"}>
-                                    <div>
-                                        <h2 className={"text-6xl font-bold"}>Your Rank is Turtle!</h2>
-                                        <h3 className={"text-xl"}>Your CPS result is {countsPerSecond} ({count} Clicks
-                                            in {defaultTimeLeft} Seconds)</h3>
-                                    </div>
-                                    <div>
-                                        <Image src={"/assets/panda.png"} layout={"intrinsic"} width={280} height={240} draggable={"false"}/>
-                                    </div>
-                                    <button onClick={start}>
-                                        <BigButton/>
-                                    </button>
-                                </div>
-                            </div>
                             }
                         </div>
 

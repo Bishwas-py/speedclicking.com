@@ -21,7 +21,7 @@ export const RippleContainer = styled.div`
   @keyframes ripple {
     to {
       opacity: 0;
-      transform: scale(0.3);
+      transform: scale(0.7);
     }
   }
 `;

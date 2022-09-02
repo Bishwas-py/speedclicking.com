@@ -78,18 +78,16 @@ export default function Home() {
                         <div className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
                             <div className={"flex flex-row bg-gray-800 text-white"}>
                                 <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
-                                         color={'#88d640'}/>
+                                         color={'#7adb1f'} shadow={'#5aa118'}/>
                                 <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}
-                                         color={'#f2d82e'}/>
+                                         color={'#ffe52a'} shadow={'#b98046'}/>
                                 <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
-                                         color={'#408bd6'}/>
+                                         color={'#ad92ff'} shadow={'#6c55eb'}/>
                             </div>
 
-                            {!finished ? <div onContextMenu={(event) => {
-                                event.preventDefault();
-                            }}
+                            {!finished ? <div onContextMenu={(event) => {event.preventDefault();}}
                                  onMouseDown={handleClick}
-                                 className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-slate-700 overflow-hidden"}>
+                                 className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
 
                                 <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                  h-full bg-slate-300/30 grid place-items-center`}>
@@ -99,11 +97,12 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <RippleButton>
-                                    <Ripple color={"blue"} duration={700}/>
+                                    <Ripple color={"#359dde"} duration={700}/>
                                 </RippleButton>
                             </div>
                             :
                             <div
+                                onContextMenu={(event) => {event.preventDefault();}}
                                 className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
                                 <div className={"text-center"}>
                                     <div>
@@ -112,7 +111,7 @@ export default function Home() {
                                             in {defaultTimeLeft} Seconds)</h3>
                                     </div>
                                     <div>
-                                        <Image src={"/img_1.png"} layout={"intrinsic"} width={280} height={240} draggable={"false"}/>
+                                        <Image src={"/assets/panda.png"} layout={"intrinsic"} width={280} height={240} draggable={"false"}/>
                                     </div>
                                     <button onClick={start}>
                                         <BigButton/>

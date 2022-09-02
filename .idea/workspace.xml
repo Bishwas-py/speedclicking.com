@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bed2a8b-a3b1-41a2-9665-1d522c3cf6a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/BigButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/counter/Counter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/counter/Counter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/effect/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/effect/RippleButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/effect/Ripple.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/effect/Ripple.styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img_1.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
       <workItem from="1662090261338" duration="3418000" />
       <workItem from="1662095034843" duration="532000" />
       <workItem from="1662095586484" duration="1175000" />
-      <workItem from="1662130241431" duration="3909000" />
+      <workItem from="1662130241431" duration="5943000" />
     </task>
     <servers />
   </component>

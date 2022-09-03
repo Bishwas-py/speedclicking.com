@@ -1,7 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-function Counter({icon, title, value, color, shadow}) {
+function Counter({children='', icon, title, value, color, shadow}) {
     return (
         <div className={`flex flex-col border-b-8 w-full p-5`} style={
             { borderColor: color }
@@ -13,6 +13,7 @@ function Counter({icon, title, value, color, shadow}) {
                         style={{
                             textShadow: `1px 1px ${shadow}, 2px 2px ${shadow}, 3px 3px ${shadow}, 4px 4px ${shadow};`,
                                 color: color}}>{value}</div>
+                    {children}
                 </div>
             </div>
             <div className={"text-center"}>{title}</div>

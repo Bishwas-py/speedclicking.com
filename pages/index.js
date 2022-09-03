@@ -4,6 +4,8 @@ import Ripple from "../components/effect/Ripple";
 import React, {useEffect} from "react";
 import RippleButton from "../components/effect/RippleButton";
 import {
+    faChevronDown,
+    faChevronUp,
     faClock,
     faGaugeHigh,
     faHandPointer,
@@ -89,33 +91,25 @@ export default function Home() {
                     </div>
                     <div>
                         <div className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
+
                             <div className={"flex flex-row bg-gray-800 text-white"}>
                                 <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
-                                         color={'#7adb1f'} shadow={'#5aa118'}/>
+                                         color={'#7adb1f'} shadow={'#5aa118'} />
                                 <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}
                                          color={'#ffe52a'} shadow={'#b98046'}/>
                                 <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
                                          color={'#ad92ff'} shadow={'#6c55eb'}/>
+
+                                {finished &&
+                                    <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}>
+                                        <button className={""} onClick={start}>
+                                            <BigButton/>
+                                        </button>
+                                    </div>
+                                }
                             </div>
 
-                            {!finished ? <div onContextMenu={(event) => {
-                                    event.preventDefault();
-                                }}
-                                              onMouseDown={handleClick}
-                                              className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
-
-                                    <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
-                                 h-full bg-slate-300/30 grid place-items-center`}>
-                                        <div className={"flex flex-col gap-4"}>
-                                            <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
-                                            <p>Click to Start Speed Clicking CPS Test</p>
-                                        </div>
-                                    </div>
-                                    <RippleButton>
-                                        <Ripple color={"#359dde"} duration={700}/>
-                                    </RippleButton>
-                                </div>
-                                :
+                            {finished ?
                                 <div
                                     onContextMenu={(event) => {
                                         event.preventDefault();
@@ -130,21 +124,33 @@ export default function Home() {
                                         </div>
                                         <div className={"my-3"}>
                                             <Image src={rank.icon} layout={"intrinsic"} width={180} height={180}
-                                                  className={""} draggable={"false"}/>
+                                                   className={""} draggable={"false"}/>
                                         </div>
                                         <div>
                                             <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
                                         </div>
-                                        {finished &&
-                                            <button onClick={start}>
-                                                <BigButton/>
-                                            </button>}
                                     </div>
+                                </div>
+                                :
+                                <div onContextMenu={(event) => {
+                                    event.preventDefault();
+                                }}
+                                     onMouseDown={handleClick}
+                                     className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
+
+                                    <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
+                                 h-full bg-slate-300/30 grid place-items-center`}>
+                                        <div className={"flex flex-col gap-4"}>
+                                            <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
+                                            <p>Click to Start Speed Clicking CPS Test</p>
+                                        </div>
+                                    </div>
+                                    <RippleButton>
+                                        <Ripple color={"#359dde"} duration={700}/>
+                                    </RippleButton>
                                 </div>
                             }
                         </div>
-
-
                     </div>
                 </div>
             </main>

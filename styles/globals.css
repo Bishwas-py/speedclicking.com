@@ -10,7 +10,12 @@
 }
 
 @layer components {
-
+    .heading-1 {
+        @apply text-xl sm:text-2xl md:text-4xl font-bold;
+    }
+    .explanation {
+        @apply text-sm md:text-lg font-thin;
+    }
 }
 
 /* mclaren-regular */

@@ -93,11 +93,11 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                             {!timeLeft &&
                                 <button className={"group mt-4"} onClick={start}>
                                     <BigButton>
-                                        <div className={"px-7 flex justify-between w-full my-auto relative"}>
-                                            <div className={"my-auto w-20"}>
+                                        <div className={"px-7 gap-3 flex justify-between w-full my-auto relative"}>
+                                            <div className={"my-auto w-10"}>
                                                 <FontAwesomeIcon icon={faRedo} className={"w-full group-hover:rotate-90 duration-300"}/>
                                             </div>
-                                            <div className={"text-left w-full"}>RESTART</div>
+                                            <div className={"text-left w-full my-auto"}>RESTART</div>
                                         </div>
                                     </BigButton>
                                 </button>

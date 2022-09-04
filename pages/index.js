@@ -2,6 +2,7 @@ import React from 'react';
 import PageLayer from "../layer/PageLayer";
 import Navbar from "../components/Navbar";
 import Layout from "../layer/Layout";
+import Button from "../components/Button";
 
 function RightClick(props) {
     let defaultTimeLeft = 10;
@@ -20,10 +21,10 @@ function RightClick(props) {
     return (
         <Layout className={""}>
             <Navbar/>
-            <div className={"min-h-screen py-16"}>
-                <div className={"p-10 text-center space-y-2"}>
-                    <h1 className={"text-4xl font-bold"}>Speed Clicking CPS Test</h1>
-                    <h2 className={"text-lg font-thin"}>This simple and free CPS (Clicks per Second)
+            <div className={"min-h-screen px-60 sm:py-10 md:py-16"}>
+                <div className={"py-10 text-center space-y-2"}>
+                    <h1 className={"heading-1"}>Speed Clicking CPS Test</h1>
+                    <h2 className={"explanation"}>This simple and free CPS (Clicks per Second)
                         tester will help you determine your mouse or finger tap speed.
                     </h2>
                 </div>
@@ -33,6 +34,23 @@ function RightClick(props) {
                     handleClick={(event)=> {handleClick(event)}}
                     setCount={setCount}  count={count}
                     rippleColor={rippleColor}/>
+                <div className={'py-7 px-2'}>
+                    <h2 className={"heading-1 text-gray-700 dark:text-gray-50 text-center w-full mb-3"}>CPS Timeframes</h2>
+                    <div className={'grid grid-cols-4 gap-x-3 gap-y-5'}>
+                        <Button second={1}/>
+                        <Button second={2}/>
+                        <Button second={12}/>
+                        <Button second={22}/>
+                        <Button second={30}/>
+                        <Button second={40}/>
+                        <Button second={50}/>
+                        <Button second={62}/>
+                        <Button second={70}/>
+                        <Button second={80}/>
+                        <Button second={90}/>
+                        <Button second={100}/>
+                    </div>
+                </div>
             </div>
         </Layout>
     );

@@ -26,7 +26,7 @@ function ClickPage({time, sideValue, side}) {
     }
 
     return (
-        <Layout className={""} title={`${smartSideName} Click CPS Test`}>
+        <Layout title={`${smartSideName} Click CPS Test`}>
             <Navbar/>
             <div className={"top-box"}>
                 <div className={"hero-section"}>
@@ -44,6 +44,18 @@ function ClickPage({time, sideValue, side}) {
                     setCount={setCount} count={count}
                     rippleColor={rippleColor}/>
                 <GotoPagesLinksBox/>
+
+                <div className={'smart-padding pt-0 space-y-3'}>
+                    <div className={'text-box sm:mt-0 mt-7'}>
+                        <h2 className={'heading-2 mb-2'}>What is Speed Clicking?</h2>
+                        <p className={'explanation'}>
+                            Speed Clicking is a skill that is used in many games. It is the ability to click as fast as possible.
+                            And our platform is here to help you improve your speed clicking skills.
+                            Your speed clicking ability is tracked and measured in CPS rates. CPS rates allows you
+                            to know about your clicking per seconds.
+                        </p>
+                    </div>
+                </div>
             </div>
         </Layout>
     );

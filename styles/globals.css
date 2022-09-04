@@ -14,7 +14,7 @@
         @apply px-2 sm:py-10 md:py-16 md:px-14 lg:px-20 xl:px-60;
     }
     .top-box {
-        @apply min-h-screen px-2 py-10;
+        @apply min-h-screen py-10;
     }
     .hero-section {
         @apply py-2 mb-3 text-center space-y-2 smart-padding;
@@ -22,11 +22,14 @@
     .heading-1 {
         @apply text-xl sm:text-2xl md:text-4xl font-bold;
     }
+    .heading-2 {
+        @apply text-lg sm:text-xl md:text-3xl font-bold;
+    }
     .explanation {
         @apply text-sm md:text-lg font-thin;
     }
     .goto-page-links {
-        @apply grid md:grid-cols-4 gap-y-1 md:gap-x-3 md:gap-y-5 mb-16;
+        @apply grid md:grid-cols-4 gap-y-1 md:gap-x-3 md:gap-y-5 mb-16 last:mb-0;
     }
 
     .goto-page-btn {
@@ -37,7 +40,7 @@
 
     .goto-page-btn.active {
         @apply bg-slate-300 border-b-slate-400;
-        @apply dark:bg-slate-800 dark:border-b-slate-600/30;
+        @apply dark:bg-slate-800 dark:border-b-slate-600/10 dark:shadow-slate-700/70 shadow;
     }
 
     .menu-btn {
@@ -59,6 +62,12 @@
     .menu-item.active {
         @apply text-purple-700;
         @apply dark:text-purple-100;
+    }
+
+    .text-box {
+        @apply p-6 rounded-xl border-l-8;
+        @apply bg-indigo-100 border-indigo-200;
+        @apply dark:bg-slate-700 dark:border-slate-600;
     }
 }
 

@@ -16,22 +16,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import BigButton from "../components/BigButton";
+
 import getRank from "../helpers/rank";
+import useInterval from "../helpers/use_interval";
 
 
 export default function Home() {
-    let [defaultTimeLeft, setDefaultTime] = React.useState(3);
+    let defaultTimeLeft = 3;
     let [count, setCount] = React.useState(0);
     let [countsPerSecond, setCountsPerSecond] = React.useState(null);
     let [startTime, setStartTime] = React.useState(0);
     let [timeLeft, setTimeLeft] = React.useState(defaultTimeLeft);
-    let [finished, setFinished] = React.useState(false);
     let [rank, setRank] = React.useState(false);
-
 
     function start(e) {
         setCount(0);
-        setFinished(false);
         setCountsPerSecond(null);
         setStartTime(Date.now());
         setTimeLeft(defaultTimeLeft);
@@ -44,29 +43,20 @@ export default function Home() {
 
     }, [count]);
 
-    useEffect(() => {
+    useInterval(() => {
         if (count > 0 && timeLeft >= 1) {
-            let timer = setInterval(() => {
-                setTimeLeft(timeLeft - 1);
-                clearInterval(timer);
-            }, 1000);
-
-            let counter = setInterval(() => {
-                setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
-                clearInterval(counter);
-            }, 100);
-        } else {
-            if (timeLeft <= 0) {
-                setFinished(true);
-            }
-        }
-    }, [count, timeLeft, startTime, countsPerSecond])
-
-    useEffect(() => {
-        if (finished) {
+            setTimeLeft(timeLeft - 1);
+        } else if (timeLeft === 0) {
             setRank(getRank(countsPerSecond));
         }
-    }, [finished]);
+    }, 1000)
+
+    useInterval(() => {
+        if (count > 0 && timeLeft >= 1) {
+            setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
+        }
+    }, 100)
+
 
     function handleClick(e) {
         setCount(count + 1);
@@ -94,13 +84,13 @@ export default function Home() {
 
                             <div className={"flex flex-row bg-gray-800 text-white"}>
                                 <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
-                                         color={'#7adb1f'} shadow={'#5aa118'} />
+                                         color={'#7adb1f'} shadow={'#5aa118'}/>
                                 <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}
                                          color={'#ffe52a'} shadow={'#b98046'}/>
                                 <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
                                          color={'#ad92ff'} shadow={'#6c55eb'}/>
 
-                                {finished &&
+                                {!timeLeft &&
                                     <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}>
                                         <button className={""} onClick={start}>
                                             <BigButton/>
@@ -109,7 +99,7 @@ export default function Home() {
                                 }
                             </div>
 
-                            {finished ?
+                            {!timeLeft ?
                                 <div
                                     onContextMenu={(event) => {
                                         event.preventDefault();
@@ -141,7 +131,8 @@ export default function Home() {
                                     <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                  h-full bg-slate-300/30 grid place-items-center`}>
                                         <div className={"flex flex-col gap-4"}>
-                                            <FontAwesomeIcon icon={faHandPointer} className={"w-12 mx-auto -rotate-12"}/>
+                                            <FontAwesomeIcon icon={faHandPointer}
+                                                             className={"w-12 mx-auto -rotate-12"}/>
                                             <p>Click to Start Speed Clicking CPS Test</p>
                                         </div>
                                     </div>

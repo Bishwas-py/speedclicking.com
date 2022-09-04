@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bed2a8b-a3b1-41a2-9665-1d522c3cf6a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/helpers/use_interval.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BigButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BigButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/counter/Counter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/counter/Counter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/rank.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/rank.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/koala.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/lion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/llama.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/panda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/reindeer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/sloth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/squirrel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/unicorn.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

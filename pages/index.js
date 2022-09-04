@@ -2,7 +2,7 @@ import React from 'react';
 import PageLayer from "../layer/PageLayer";
 import Navbar from "../components/Navbar";
 import Layout from "../layer/Layout";
-import GoToPageButton from "../components/GoToPageButton";
+import GotoPagesLinksBox from "../components/links/GotoPagesLinksBox";
 
 function RightClick(props) {
     let defaultTimeLeft = 10;
@@ -18,6 +18,7 @@ function RightClick(props) {
             setRippleColor('#ed95a7')
         }
     }
+
     return (
         <Layout className={""}>
             <Navbar/>
@@ -31,26 +32,13 @@ function RightClick(props) {
                 <PageLayer
                     startText={'Right Click to Start Speed Clicking CPS Test'}
                     defaultTimeLeft={defaultTimeLeft}
-                    handleClick={(event)=> {handleClick(event)}}
-                    setCount={setCount}  count={count}
+                    handleClick={(event) => {
+                        handleClick(event)
+                    }}
+                    setCount={setCount} count={count}
                     rippleColor={rippleColor}/>
-                <div className={'py-7 px-2'}>
-                    <h2 className={"heading-1 text-gray-700 dark:text-gray-50 text-center w-full mb-3"}>CPS Timeframes</h2>
-                    <div className={'grid grid-cols-4 gap-x-3 gap-y-5'}>
-                        <GoToPageButton second={1}/>
-                        <GoToPageButton second={2}/>
-                        <GoToPageButton second={12}/>
-                        <GoToPageButton second={22}/>
-                        <GoToPageButton second={30}/>
-                        <GoToPageButton second={40}/>
-                        <GoToPageButton second={50}/>
-                        <GoToPageButton second={62}/>
-                        <GoToPageButton second={70}/>
-                        <GoToPageButton second={80}/>
-                        <GoToPageButton second={90}/>
-                        <GoToPageButton second={100}/>
-                    </div>
-                </div>
+
+                <GotoPagesLinksBox/>
             </div>
         </Layout>
     );

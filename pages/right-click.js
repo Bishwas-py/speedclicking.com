@@ -12,7 +12,7 @@ function RightClick(props) {
             setCount(count + 1);
             setRippleColor(defaultRippleColor)
         } else {
-            setRippleColor('red')
+            setRippleColor('#ed95a7')
         }
     }
     return (

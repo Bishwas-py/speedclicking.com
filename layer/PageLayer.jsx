@@ -69,7 +69,8 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                                  color={'#ad92ff'} shadow={'#6c55eb'}/>
                     </div>
                     {!timeLeft &&
-                        <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}>
+                        <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}
+                             style={{minWidth: '129px'}}>
                             <button className={"w-full"} onMouseDown={start}>
                                 <BigButton/>
                             </button>

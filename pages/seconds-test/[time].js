@@ -70,7 +70,7 @@ function ClickPage({time, sideValue, side}) {
                         <h2 className={'heading-2 mb-2'}>How to take a CPS test?</h2>
                         <p className={'explanation'}>
                             We have develop multiple CPS tests for you, to take a CPS test you can scroll up to the
-                            <strong>"CPS Timeframes"</strong> section, and choose any CPS test that you feel comfortable with.
+                            <strong>&quot;CPS Timeframes&quot;</strong> section, and choose any CPS test that you feel comfortable with.
                         </p>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import PageLayer from "../layer/PageLayer";
 import Navbar from "../components/Navbar";
 import Layout from "../layer/Layout";
-import GotoPagesLinksBox from "../components/links/GotoPagesLinksBox";
+import GotoPagesLinksBox from "../components/links/goto/GotoPagesLinksBox";
 
 function RightClick(props) {
     let defaultTimeLeft = 10;
@@ -22,7 +22,7 @@ function RightClick(props) {
     return (
         <Layout className={""}>
             <Navbar/>
-            <div className={"min-h-screen px-60 sm:py-10 md:py-16"}>
+            <div className={"top-box"}>
                 <div className={"py-10 text-center space-y-2"}>
                     <h1 className={"heading-1"}>Speed Clicking CPS Test</h1>
                     <h2 className={"explanation"}>This simple and free CPS (Clicks per Second)

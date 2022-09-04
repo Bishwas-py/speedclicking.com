@@ -10,6 +10,9 @@
 }
 
 @layer components {
+    .top-box {
+        @apply min-h-screen px-60 sm:py-10 md:py-16;
+    }
     .heading-1 {
         @apply text-xl sm:text-2xl md:text-4xl font-bold;
     }

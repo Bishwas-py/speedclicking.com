@@ -15,13 +15,22 @@ import Image from "next/image";
 import BigButton from "../components/BigButton";
 import getRank from "../helpers/rank";
 import useInterval from "../helpers/use_interval";
+import {useRouter} from "next/router";
 
 
-export default function PageLayer({ defaultTimeLeft, handleClick, setCount, count, startText="Click to Start Speed Clicking CPS Test", rippleColor="#359dde" }) {
+export default function PageLayer({
+                                      defaultTimeLeft,
+                                      handleClick,
+                                      setCount,
+                                      count,
+                                      startText = "Click to Start Speed Clicking CPS Test",
+                                      rippleColor = "#359dde"
+                                  }) {
     let [countsPerSecond, setCountsPerSecond] = React.useState(null);
     let [startTime, setStartTime] = React.useState(0);
     let [timeLeft, setTimeLeft] = React.useState(defaultTimeLeft);
     let [rank, setRank] = React.useState(false);
+    let router = useRouter();
 
     function start(e) {
         setCount(0);
@@ -29,6 +38,13 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
         setStartTime(Date.now());
         setTimeLeft(defaultTimeLeft);
     }
+
+    React.useEffect(() => {
+        setCount(0);
+        setCountsPerSecond(null);
+        setStartTime(Date.now());
+        setTimeLeft(defaultTimeLeft);
+    }, [router]);
 
     React.useEffect(() => {
         if (count === 1) {
@@ -56,7 +72,9 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
     return (
         <div className={"mx-3"}>
             <div
-                onContextMenu={(event) => {event.preventDefault();}}
+                onContextMenu={(event) => {
+                    event.preventDefault();
+                }}
                 className={"flex-col flex mx-auto lg:w-[979px] rounded-2xl overflow-hidden"}>
 
                 <div className={"flex flex-col bg-gray-800 sm:flex-row"}>
@@ -73,7 +91,9 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
 
                 {!timeLeft ?
                     <div
-                        onContextMenu={(event) => {event.preventDefault();}}
+                        onContextMenu={(event) => {
+                            event.preventDefault();
+                        }}
                         className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
                         <div className={"text-center"}>
                             <div>
@@ -95,7 +115,8 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                                     <BigButton>
                                         <div className={"px-7 gap-3 flex justify-between w-full my-auto relative"}>
                                             <div className={"my-auto w-10"}>
-                                                <FontAwesomeIcon icon={faRedo} className={"w-full group-hover:rotate-90 duration-300"}/>
+                                                <FontAwesomeIcon icon={faRedo}
+                                                                 className={"w-full group-hover:rotate-90 duration-300"}/>
                                             </div>
                                             <div className={"text-left w-full my-auto"}>RESTART</div>
                                         </div>
@@ -105,13 +126,16 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                         </div>
                     </div>
                     :
-                    <div onContextMenu={(event) => { event.preventDefault(); }}
+                    <div onContextMenu={(event) => {
+                        event.preventDefault();
+                    }}
                          onMouseDown={handleClick}
                          className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
                         <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                             h-full bg-slate-300/30 grid place-items-center`}>
                             <div className={"relative flex flex-col gap-4"}>
-                                <FontAwesomeIcon icon={faHandPointer} className={"text-6xl w-12 w-fit mx-auto -rotate-12"}/>
+                                <FontAwesomeIcon icon={faHandPointer}
+                                                 className={"text-6xl w-12 w-fit mx-auto -rotate-12"}/>
                                 <p className={"px-3"}>{startText}</p>
                             </div>
                         </div>

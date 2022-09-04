@@ -55,6 +55,16 @@ function ClickPage({time, sideValue, side}) {
                             to know about your clicking per seconds.
                         </p>
                     </div>
+
+                    <div className={'text-box sm:mt-0 mt-7'}>
+                        <h2 className={'heading-2 mb-2'}>What is CPS?</h2>
+                        <p className={'explanation'}>
+                            Speed Clicking is a skill that is used in many games. It is the ability to click as fast as possible.
+                            And our platform is here to help you improve your speed clicking skills.
+                            Your speed clicking ability is tracked and measured in CPS rates. CPS rates allows you
+                            to know about your clicking per seconds.
+                        </p>
+                    </div>
                 </div>
             </div>
         </Layout>

@@ -33,7 +33,7 @@ function getRank(countsPerSecond) {
             icon: '/assets/rabbit.png'
         }
     } else if (countsPerSecond < 9) {
-        //    lion
+        //    Lynx
         return {
             name: "Lynx",
             description: "You are a lynx. You are fast and active. You are being a clicker.",

@@ -46,16 +46,18 @@ export default function Home() {
     useInterval(() => {
         if (count > 0 && timeLeft >= 1) {
             setTimeLeft(timeLeft - 1);
-        } else if (timeLeft === 0) {
-            setRank(getRank(countsPerSecond));
         }
     }, 1000)
+
+    React.useEffect(() => {
+        setRank(getRank(countsPerSecond));
+    }, [countsPerSecond]);
 
     useInterval(() => {
         if (count > 0 && timeLeft >= 1) {
             setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
         }
-    }, 100)
+    }, 1000)
 
 
     function handleClick(e) {
@@ -80,7 +82,11 @@ export default function Home() {
                         </h2>
                     </div>
                     <div>
-                        <div className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
+                        <div
+                            onContextMenu={(event) => {
+                                event.preventDefault();
+                            }}
+                            className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
 
                             <div className={"flex flex-row bg-gray-800 text-white"}>
                                 <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
@@ -92,7 +98,7 @@ export default function Home() {
 
                                 {!timeLeft &&
                                     <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}>
-                                        <button className={""} onClick={start}>
+                                        <button className={""} onMouseDown={start}>
                                             <BigButton/>
                                         </button>
                                     </div>

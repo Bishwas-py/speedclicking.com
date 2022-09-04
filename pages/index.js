@@ -2,7 +2,7 @@ import React from 'react';
 import PageLayer from "../layer/PageLayer";
 import Navbar from "../components/Navbar";
 import Layout from "../layer/Layout";
-import Button from "../components/Button";
+import GoToPageButton from "../components/GoToPageButton";
 
 function RightClick(props) {
     let defaultTimeLeft = 10;
@@ -37,18 +37,18 @@ function RightClick(props) {
                 <div className={'py-7 px-2'}>
                     <h2 className={"heading-1 text-gray-700 dark:text-gray-50 text-center w-full mb-3"}>CPS Timeframes</h2>
                     <div className={'grid grid-cols-4 gap-x-3 gap-y-5'}>
-                        <Button second={1}/>
-                        <Button second={2}/>
-                        <Button second={12}/>
-                        <Button second={22}/>
-                        <Button second={30}/>
-                        <Button second={40}/>
-                        <Button second={50}/>
-                        <Button second={62}/>
-                        <Button second={70}/>
-                        <Button second={80}/>
-                        <Button second={90}/>
-                        <Button second={100}/>
+                        <GoToPageButton second={1}/>
+                        <GoToPageButton second={2}/>
+                        <GoToPageButton second={12}/>
+                        <GoToPageButton second={22}/>
+                        <GoToPageButton second={30}/>
+                        <GoToPageButton second={40}/>
+                        <GoToPageButton second={50}/>
+                        <GoToPageButton second={62}/>
+                        <GoToPageButton second={70}/>
+                        <GoToPageButton second={80}/>
+                        <GoToPageButton second={90}/>
+                        <GoToPageButton second={100}/>
                     </div>
                 </div>
             </div>

@@ -1,22 +1,19 @@
 import Head from 'next/head'
 import Navbar from "../components/Navbar";
 import Ripple from "../components/effect/Ripple";
-import React, {useEffect} from "react";
+import React from "react";
 import RippleButton from "../components/effect/RippleButton";
 import {
-    faChevronDown,
-    faChevronUp,
     faClock,
     faGaugeHigh,
     faHandPointer,
-    faMortarBoard, faRedo
+    faMortarBoard
 } from "@fortawesome/free-solid-svg-icons";
+
 import Counter from "../components/counter/Counter";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Link from "next/link";
 import BigButton from "../components/BigButton";
-
 import getRank from "../helpers/rank";
 import useInterval from "../helpers/use_interval";
 
@@ -57,7 +54,7 @@ export default function Home() {
         if (count > 0 && timeLeft >= 1) {
             setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
         }
-    }, 1000)
+    }, 150)
 
 
     function handleClick(e) {
@@ -83,9 +80,7 @@ export default function Home() {
                     </div>
                     <div>
                         <div
-                            onContextMenu={(event) => {
-                                event.preventDefault();
-                            }}
+                            onContextMenu={(event) => {event.preventDefault();}}
                             className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
 
                             <div className={"flex flex-row bg-gray-800 text-white"}>
@@ -107,13 +102,11 @@ export default function Home() {
 
                             {!timeLeft ?
                                 <div
-                                    onContextMenu={(event) => {
-                                        event.preventDefault();
-                                    }}
+                                    onContextMenu={(event) => {event.preventDefault();}}
                                     className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
                                     <div className={"text-center"}>
                                         <div>
-                                            <h2 className={"text-6xl font-bold"}>{rank.name}</h2>
+                                            <h2 className={"text-6xl font-bold mb-7"}>{rank.name}</h2>
                                             <h3 className={"text-xl"}>Your CPS result
                                                 is {countsPerSecond} ({count} Clicks
                                                 in {defaultTimeLeft} Seconds)</h3>

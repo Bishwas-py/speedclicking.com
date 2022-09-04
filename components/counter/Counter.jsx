@@ -8,15 +8,16 @@ function Counter({children='', icon, title, value, color, shadow}) {
         }>
             <div className={"flex justify-center gap-3"}>
                 <div className={"relative flex gap-3 font-bold text-6xl"}>
-                    <FontAwesomeIcon icon={icon} className={"w-12 my-auto"}/>
                     <div
                         style={{
                             textShadow: `1px 1px ${shadow}, 2px 2px ${shadow}, 3px 3px ${shadow}, 4px 4px ${shadow};`,
-                                color: color}}>{value}</div>
+                            color: color}}>{value}</div>
                     {children}
                 </div>
             </div>
-            <div className={"text-center"}>{title}</div>
+            <div className={"flex gap-3 justify-center text-center"}>
+                <FontAwesomeIcon icon={icon} className={"w-5 my-auto"}/>
+                {title}</div>
         </div>
     );
 }

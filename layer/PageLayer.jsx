@@ -6,7 +6,7 @@ import {
     faClock,
     faGaugeHigh,
     faHandPointer,
-    faMortarBoard
+    faMortarBoard, faRedo
 } from "@fortawesome/free-solid-svg-icons";
 
 import Counter from "../components/counter/Counter";
@@ -68,14 +68,6 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                         <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
                                  color={'#ad92ff'} shadow={'#6c55eb'}/>
                     </div>
-                    {!timeLeft &&
-                        <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}
-                             style={{minWidth: '129px'}}>
-                            <button className={"w-full"} onMouseDown={start}>
-                                <BigButton/>
-                            </button>
-                        </div>
-                    }
                 </div>
 
 
@@ -97,6 +89,19 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                             <div>
                                 <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
                             </div>
+
+                            {!timeLeft &&
+                                <button className={"group mt-4"} onClick={start}>
+                                    <BigButton>
+                                        <div className={"px-7 flex justify-between w-full my-auto relative"}>
+                                            <div className={"my-auto w-20"}>
+                                                <FontAwesomeIcon icon={faRedo} className={"w-full group-hover:rotate-90 duration-300"}/>
+                                            </div>
+                                            <div className={"text-left w-full"}>RESTART</div>
+                                        </div>
+                                    </BigButton>
+                                </button>
+                            }
                         </div>
                     </div>
                     :
@@ -106,8 +111,8 @@ export default function PageLayer({ defaultTimeLeft, handleClick, setCount, coun
                         <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                             h-full bg-slate-300/30 grid place-items-center`}>
                             <div className={"relative flex flex-col gap-4"}>
-                                <FontAwesomeIcon icon={faHandPointer} className={"text-6xl w-fit mx-auto -rotate-12"}/>
-                                <p>{startText}</p>
+                                <FontAwesomeIcon icon={faHandPointer} className={"text-6xl w-12 w-fit mx-auto -rotate-12"}/>
+                                <p className={"px-3"}>{startText}</p>
                             </div>
                         </div>
                         <RippleButton>

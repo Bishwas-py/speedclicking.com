@@ -29,9 +29,9 @@ function ClickPage({time, sideValue, side}) {
         <Layout className={""} title={`${smartSideName} Click CPS Test`}>
             <Navbar/>
             <div className={"top-box"}>
-                <div className={"p-10 text-center space-y-2"}>
-                    <h1 className={"text-4xl font-bold"}>{time} seconds {side} click CPS Test</h1>
-                    <h2 className={"text-lg font-thin"}>
+                <div className={"hero-section"}>
+                    <h1 className={"heading-1"}>{time} seconds {side} click CPS Test</h1>
+                    <h2 className={"explanation"}>
                         {description}
                     </h2>
                 </div>

@@ -21,9 +21,9 @@ function RightClick(props) {
         <Layout className={""} title={"Right Click CPS Test"}>
             <Navbar/>
             <div className={"min-h-screen py-16"}>
-                <div className={"p-10 text-center space-y-2"}>
-                    <h1 className={"text-4xl font-bold"}>Right Click CPS Test</h1>
-                    <h2 className={"text-lg font-thin"}>
+                <div className={"hero-section"}>
+                    <h1 className={"heading-1"}>Right Click CPS Test</h1>
+                    <h2 className={"explanation"}>
                         Test you right mouse clicking speed with this free and simple speeding clicking
                         CPS (Clicks Per Second) Tester.
                     </h2>

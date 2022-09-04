@@ -23,7 +23,7 @@ function RightClick(props) {
         <Layout className={""}>
             <Navbar/>
             <div className={"top-box"}>
-                <div className={"py-10 text-center space-y-2"}>
+                <div className={"hero-section"}>
                     <h1 className={"heading-1"}>Speed Clicking CPS Test</h1>
                     <h2 className={"explanation"}>This simple and free CPS (Clicks per Second)
                         tester will help you determine your mouse or finger tap speed.

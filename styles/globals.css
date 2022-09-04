@@ -16,6 +16,13 @@
     .explanation {
         @apply text-sm md:text-lg font-thin;
     }
+    .goto-page-btn {
+        @apply p-2 rounded-xl text-center font-light text-slate-700 bg-slate-100 border-b-slate-200 border-b-8;
+    }
+
+    .goto-page-btn.active {
+        @apply bg-slate-300 border-b-slate-400;
+    }
 }
 
 /* mclaren-regular */

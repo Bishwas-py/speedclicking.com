@@ -2,6 +2,7 @@ import React from 'react';
 import PageLayer from "../../layer/PageLayer";
 import Navbar from "../../components/Navbar";
 import Layout from "../../layer/Layout";
+import GotoPagesLinksBox from "../../components/links/GotoPagesLinksBox";
 
 function ClickPage({time, sideValue, side}) {
     let defaultTimeLeft = time;
@@ -40,6 +41,7 @@ function ClickPage({time, sideValue, side}) {
                     }}
                     setCount={setCount} count={count}
                     rippleColor={rippleColor}/>
+                <GotoPagesLinksBox/>
             </div>
         </Layout>
     );

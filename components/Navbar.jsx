@@ -1,6 +1,4 @@
 import React from 'react';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronDown, faMouse, faMousePointer} from "@fortawesome/free-solid-svg-icons";
 import Wrap from "./wraps/Wrap";
 
 function Navbar(props) {

@@ -71,27 +71,29 @@ export default function Home() {
                             tester will help you determine your mouse or finger tap speed.
                         </h2>
                     </div>
-                    <div>
+                    <div className={"mx-3"}>
                         <div
                             onContextMenu={(event) => {event.preventDefault();}}
-                            className={"flex-col flex mx-auto w-[979px] rounded-2xl overflow-hidden"}>
+                            className={"flex-col flex mx-auto lg:w-[979px] rounded-2xl overflow-hidden"}>
 
-                            <div className={"flex flex-row bg-gray-800 text-white"}>
-                                <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
-                                         color={'#7adb1f'} shadow={'#5aa118'}/>
-                                <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}
-                                         color={'#ffe52a'} shadow={'#b98046'}/>
-                                <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
-                                         color={'#ad92ff'} shadow={'#6c55eb'}/>
-
+                            <div className={"flex flex-col bg-gray-800 sm:flex-row"}>
+                                <div className={"flex flex-row text-white w-full"}>
+                                    <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
+                                             color={'#7adb1f'} shadow={'#5aa118'}/>
+                                    <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}
+                                             color={'#ffe52a'} shadow={'#b98046'}/>
+                                    <Counter icon={faMortarBoard} title={"SCORE"} value={count || '0.00'}
+                                             color={'#ad92ff'} shadow={'#6c55eb'}/>
+                                </div>
                                 {!timeLeft &&
                                     <div className={"pb-3 px-7 py-0 justify-center flex border-b-cyan-500 border-b-8"}>
-                                        <button className={""} onMouseDown={start}>
+                                        <button className={"w-full"} onMouseDown={start}>
                                             <BigButton/>
                                         </button>
                                     </div>
                                 }
                             </div>
+
 
                             {!timeLeft ?
                                 <div
@@ -114,17 +116,13 @@ export default function Home() {
                                     </div>
                                 </div>
                                 :
-                                <div onContextMenu={(event) => {
-                                    event.preventDefault();
-                                }}
+                                <div onContextMenu={(event) => { event.preventDefault(); }}
                                      onMouseDown={handleClick}
                                      className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
-
                                     <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
-                                 h-full bg-slate-300/30 grid place-items-center`}>
-                                        <div className={"flex flex-col gap-4"}>
-                                            <FontAwesomeIcon icon={faHandPointer}
-                                                             className={"w-12 mx-auto -rotate-12"}/>
+                                            h-full bg-slate-300/30 grid place-items-center`}>
+                                        <div className={"relative flex flex-col gap-4"}>
+                                            <FontAwesomeIcon icon={faHandPointer} className={"text-6xl w-fit mx-auto -rotate-12"}/>
                                             <p>Click to Start Speed Clicking CPS Test</p>
                                         </div>
                                     </div>

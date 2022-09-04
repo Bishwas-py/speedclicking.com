@@ -18,6 +18,8 @@ function ClickPage({time, sideValue, side}) {
         if (event.button === sideValue) {
             setCount(count + 1);
             setRippleColor(defaultRippleColor)
+        } else if (side === 'double') {
+            setCount(count + 1);
         } else {
             setRippleColor('#ed95a7')
         }
@@ -57,7 +59,8 @@ export async function getServerSideProps({query}) {
         sideValue = 2
     } else if (query.side === 'left') {
         sideValue = 0
-    } else {
+    } else if (query.side === 'double') {sideValue = null}
+    else {
         return {
             redirect: {
                 destination: '/',

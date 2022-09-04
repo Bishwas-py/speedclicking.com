@@ -11,8 +11,12 @@ function GotoPagesLinksBox(props) {
                 <GotoPagesLinks side={'left'}/>
             </div>
             <p className={'text-center mb-7'}>Test your <b>right mouse</b> clicking skills and speed with these <strong>Right Mouse CPS Tester</strong></p>
-            <div className={'grid grid-cols-4 gap-x-3 gap-y-5'}>
+            <div className={'grid grid-cols-4 gap-x-3 gap-y-5 mb-16'}>
                 <GotoPagesLinks side={'right'}/>
+            </div>
+            <p className={'text-center mb-7'}>Test your <b>double mouse</b> clicking skills and speed with these <strong>Right Mouse CPS Tester</strong></p>
+            <div className={'grid grid-cols-4 gap-x-3 gap-y-5'}>
+                <GotoPagesLinks side={'double'}/>
             </div>
         </div>
     );

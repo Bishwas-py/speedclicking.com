@@ -1,6 +1,8 @@
 import React from "react";
 function RippleButton({ children }) {
-    return <button className={"overflow-hidden relative w-full h-full"}>{children}</button>;
+    return <button
+        aria-label={"Ripple Button"}
+        className={"overflow-hidden relative w-full h-full"}>{children}</button>;
 }
 
 export default RippleButton;

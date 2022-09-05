@@ -102,8 +102,8 @@ export default function PageLayer({
                                     is {countsPerSecond} ({count} Clicks
                                     in {defaultTimeLeft} Seconds)</h3>
                             </div>
-                            <div className={"my-3"}>
-                                <Image src={rank.icon} width={240} height={240} alt={'Your Avatar'}
+                            <div className={"my-3 w-full"}>
+                                <img src={rank.icon} width={'240px'} height={'240px'} alt={'Your Avatar'}
                                        className={"mx-auto mb-4"} draggable={"false"}/>
                             </div>
                             <div>

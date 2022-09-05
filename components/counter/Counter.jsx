@@ -16,7 +16,7 @@ function Counter({children='', icon, title, value, color, shadow}) {
                 </div>
             </div>
             <div className={"flex gap-1 sm:gap-3 text-sm sm:text-md md:text-lg lg:text-xl justify-center text-center"}>
-                <FontAwesomeIcon icon={icon} className={"w-5 my-auto"}/>
+                <FontAwesomeIcon icon={icon} className={"w-5 h-5 my-auto"}/>
                 {title}</div>
         </div>
     );

@@ -10,7 +10,7 @@ function Counter({children='', icon, title, value, color, shadow}) {
                 <div className={"relative flex gap-3 font-bold text-xl sm:text-3xl md:text-5xl lg:text-6xl"}>
                     <div
                         style={{
-                            textShadow: `1px 1px ${shadow}, 2px 2px ${shadow}, 3px 3px ${shadow}, 4px 4px ${shadow};`,
+                            textShadow: `1px 1px ${shadow}, 2px 2px ${shadow}, 3px 3px ${shadow}, 4px 4px ${shadow}`,
                             color: color}}>{value}</div>
                     {children}
                 </div>

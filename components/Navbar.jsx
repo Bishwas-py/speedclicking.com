@@ -10,7 +10,7 @@ function Navbar(props) {
     return (
         <div className={"flex gap-x-3 px-4 bg-white border-b dark:border-slate-700 shadow-xl shadow-gray-100 dark:shadow w-full h-16 dark:bg-jazzy-head"}>
             <Link href={'/'}>
-                <a className={"w-fit self-center font-extrabold text-2xl"}>
+                <a className={"w-fit self-center font-extrabold sm:text-sm md:text-xl lg:text-2xl"}>
                     SPEED <Wrap>CLICKING</Wrap>
                 </a>
             </Link>

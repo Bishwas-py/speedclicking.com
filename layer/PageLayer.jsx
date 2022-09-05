@@ -11,7 +11,6 @@ import {
 
 import Counter from "../components/counter/Counter";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import BigButton from "../components/BigButton";
 import getRank from "../helpers/rank";
 import useInterval from "../helpers/use_interval";
@@ -61,13 +60,13 @@ export default function PageLayer({
         if (count > 0 && timeLeft >= 1) {
             setCountsPerSecond((count / ((Date.now() - startTime) / 1000)).toFixed(2));
         }
-    }, timeLeft ? 150 : null)
+    }, timeLeft ? 100 : null)
 
     useInterval(() => {
-        if (count > 0 && timeLeft >= 1) {
+        if (count > 0 && timeLeft > 0) {
             setTimeLeft(timeLeft - 1);
         }
-    }, timeLeft ? 1000 : null)
+    }, (timeLeft && count) ? 1000: null);
 
     return (
         <div className={"mx-3"}>
@@ -103,8 +102,8 @@ export default function PageLayer({
                                     in {defaultTimeLeft} Seconds)</h3>
                             </div>
                             <div className={"my-3"}>
-                                <Image src={rank.icon} layout={"intrinsic"} width={180} height={180}
-                                       className={""} draggable={"false"}/>
+                                <img src={rank.icon} width={240} height={240} alt={'Your Avatar'}
+                                       className={"mx-auto mb-4"} draggable={"false"}/>
                             </div>
                             <div>
                                 <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
@@ -130,7 +129,7 @@ export default function PageLayer({
                         event.preventDefault();
                     }}
                          onMouseDown={handleClick}
-                         className={"select-none relative w-full h-[479px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
+                         className={"select-none relative w-full h-[500px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
                         <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                             h-full bg-slate-300/30 grid place-items-center`}>
                             <div className={"relative flex flex-col gap-4"}>

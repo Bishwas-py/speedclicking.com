@@ -107,6 +107,7 @@
     font-style: normal;
     font-weight: 400;
     src: local(''), url('../fonts/sora/Sora-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora bold */
@@ -115,6 +116,7 @@
     font-style: normal;
     font-weight: 700;
     src: local(''), url('../fonts/sora/Sora-Bold.ttf') format('truetype');
+    font-display: swap;
 }
 /* sora extra bold */
 @font-face {
@@ -122,6 +124,7 @@
     font-style: normal;
     font-weight: 800;
     src: local(''), url('../fonts/sora/Sora-ExtraBold.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora extra light */
@@ -130,6 +133,7 @@
     font-style: normal;
     font-weight: 100;
     src: local(''), url('../fonts/sora/Sora-ExtraLight.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora light */
@@ -138,6 +142,7 @@
     font-style: normal;
     font-weight: 300;
     src: local(''), url('../fonts/sora/Sora-Light.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora medium */
@@ -146,6 +151,7 @@
     font-style: normal;
     font-weight: 500;
     src: local(''), url('../fonts/sora/Sora-Medium.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora regular */
@@ -154,6 +160,7 @@
     font-style: normal;
     font-weight: 400;
     src: local(''), url('../fonts/sora/Sora-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora semi bold */
@@ -162,6 +169,7 @@
     font-style: normal;
     font-weight: 600;
     src: local(''), url('../fonts/sora/Sora-SemiBold.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* sora thin */
@@ -170,6 +178,7 @@
     font-style: normal;
     font-weight: 200;
     src: local(''), url('../fonts/sora/Sora-Thin.ttf') format('truetype');
+    font-display: swap;
 }
 
 /* all @font-faces for SourceSansPro */

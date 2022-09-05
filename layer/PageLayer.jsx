@@ -15,6 +15,7 @@ import BigButton from "../components/BigButton";
 import getRank from "../helpers/rank";
 import useInterval from "../helpers/use_interval";
 import {useRouter} from "next/router";
+import Image from "next/image";
 
 
 export default function PageLayer({
@@ -102,7 +103,7 @@ export default function PageLayer({
                                     in {defaultTimeLeft} Seconds)</h3>
                             </div>
                             <div className={"my-3"}>
-                                <img src={rank.icon} width={240} height={240} alt={'Your Avatar'}
+                                <Image src={rank.icon} width={240} height={240} alt={'Your Avatar'}
                                        className={"mx-auto mb-4"} draggable={"false"}/>
                             </div>
                             <div>

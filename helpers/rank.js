@@ -1,9 +1,9 @@
 function getRank(countsPerSecond) {
     if (countsPerSecond < 4) {
         return {
-            name: "Sloth",
-            description: "You are a sloth. You are slow and lazy. You are very bad clicker. Keep trying, be a lion.",
-            icon: '/assets/sloth.png'
+            name: "Koala",
+            description: "You are a koala. You are slow and lazy. You are very bad clicker. Keep trying, be a lion.",
+            icon: '/assets/koala.png'
         };
     } else if (countsPerSecond < 5) {
         return {

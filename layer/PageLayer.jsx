@@ -47,6 +47,17 @@ export default function PageLayer({
     }, [router]);
 
     React.useEffect(() => {
+        function keyDownHandler(e) {
+            if (e.key.toLowerCase() === "r" && !timeLeft) {
+                start();
+            }
+        }
+
+        document.addEventListener('keydown', keyDownHandler);
+        return () => document.removeEventListener('keydown', keyDownHandler);
+    }, [timeLeft]);
+
+    React.useEffect(() => {
         if (count === 1) {
             setStartTime(Date.now());
         }
@@ -67,7 +78,7 @@ export default function PageLayer({
         if (count > 0 && timeLeft > 0) {
             setTimeLeft(timeLeft - 1);
         }
-    }, (timeLeft && count) ? 1000: null);
+    }, (timeLeft && count) ? 1000 : null);
 
     return (
         <div className={"mx-3"}>
@@ -104,24 +115,28 @@ export default function PageLayer({
                             </div>
                             <div className={"my-3 w-full"}>
                                 <img src={rank.icon} width={'240px'} height={'240px'} alt={'Your Avatar'}
-                                       className={"mx-auto mb-4"} draggable={"false"}/>
+                                     className={"mx-auto mb-4"} draggable={"false"}/>
                             </div>
                             <div>
                                 <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
                             </div>
 
                             {!timeLeft &&
-                                <button className={"group mt-4"} onClick={start}>
-                                    <BigButton>
-                                        <div className={"px-7 gap-3 flex justify-between w-full my-auto relative"}>
-                                            <div className={"my-auto w-10"}>
-                                                <FontAwesomeIcon icon={faRedo}
-                                                                 className={"w-full group-hover:rotate-90 duration-300"}/>
+                                <div className={"flex flex-col w-72 mx-auto gap-2"}>
+                                    <button className={"group mt-4"} onClick={start}>
+                                        <BigButton>
+                                            <div className={"px-7 gap-3 flex justify-between w-full my-auto relative"}>
+                                                <div className={"my-auto w-10"}>
+                                                    <FontAwesomeIcon icon={faRedo}
+                                                                     className={"w-full group-hover:rotate-90 duration-300"}/>
+                                                </div>
+                                                <div className={"text-center w-full my-auto"}>RESTART</div>
+                                                <code className={'bg-gray-700 px-2 rounded-md'}>r</code>
                                             </div>
-                                            <div className={"text-left w-full my-auto"}>RESTART</div>
-                                        </div>
-                                    </BigButton>
-                                </button>
+                                        </BigButton>
+                                    </button>
+                                    <small>Press &quot;<strong>r</strong>&quot; to restart</small>
+                                </div>
                             }
                         </div>
                     </div>

@@ -69,6 +69,10 @@
         @apply bg-indigo-100 border-indigo-200;
         @apply dark:bg-slate-700 dark:border-slate-600;
     }
+    .big-button {
+        @apply rounded-2xl h-16 grid place-items-center w-full text-2xl font-medium;
+        @apply text-white bg-indigo-500 border-b-8 border-b-indigo-700 hover:border-b-indigo-800;
+    }
 }
 
 /* mclaren-regular */

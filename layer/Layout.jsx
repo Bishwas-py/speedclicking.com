@@ -6,8 +6,14 @@ function Layout({className='', title="CPS Test", children}) {
         <main className={className}>
             <Head>
                 <title>{`${title} | Speed Clicking`}</title>
-                <meta name="description" content="A speed clicking test to see how many clicks per second you can do."/>
+                <meta name="description" content="A speed clicking test to see how many clicks per second you can do. Speed Clicking helps you to increase your CPS [click per second] rates."/>
                 <link rel="icon" href="/favicon.png"/>
+
+                <meta property="og:title" content="Increase your clicking skills with Speed Clicking." />
+                <meta property="og:description" content="Speed Clicking is an online CPS and clicking speed tester that allows you to test and enchance your clicking speed." />
+                <meta property="og:image" content="https://www.speedclicking.com/speed-clicking.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
             </Head>
 
             {children}

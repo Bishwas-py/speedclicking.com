@@ -44,22 +44,24 @@
     }
 
     .menu-btn {
-        @apply flex px-3 h-full gap-x-3 cursor-pointer select-none relative;
+        @apply flex px-3 h-full gap-x-3 duration-150 cursor-pointer select-none relative;
+    }
+    .menu-btn.on {
+        @apply border-b-black/5 border-b-8;
     }
     .menu-container {
-        @apply duration-100 absolute top-5 right-0 w-72 z-30;
+        @apply duration-100 absolute top-16 right-0 h-60 w-72 z-30;
+        @apply bg-white/95 dark:bg-slate-700;
+        @apply backdrop-blur rounded-xl flex py-2 flex-col overflow-y-scroll cute-scroll;
     }
-    .menu-container.on {
-        @apply scale-100 bg-gradient-to-t from-black/5;
+    .menu-btn.on .menu-container {
+        @apply scale-100;
     }
 
-    .menu-container.off {
+    .menu-btn.off .menu-container {
         @apply scale-0;
     }
-    .menu-contained-box {
-        @apply bg-white/95 dark:bg-slate-700;
-        @apply backdrop-blur rounded-xl flex mt-12 py-2 flex-col overflow-y-scroll cute-scroll max-h-60 h-full w-full;
-    }
+
     .menu-item {
         @apply px-5 text-left py-2 font-thin text-sm;
         @apply text-slate-700 hover:text-purple-700;

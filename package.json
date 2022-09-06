@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "next": "12.2.5",
+    "next-themes": "^0.2.0",
     "nextjs-progressbar": "^0.0.14",
     "process": "^0.11.10",
     "react": "18.2.0",

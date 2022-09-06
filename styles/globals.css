@@ -28,6 +28,23 @@
     .explanation {
         @apply text-sm md:text-lg font-thin;
     }
+    .play-section {
+        @apply mx-auto duration-100;
+    }
+    .play-section.full-screen-off {
+        @apply lg:w-[979px] mx-auto;
+    }
+    .play-section.full-screen-on {
+        @apply fixed top-0 w-full h-full p-7 z-50 backdrop-blur;
+        @apply bg-slate-100/80;
+        @apply dark:bg-slate-700/20;
+    }
+    .play-section .clicking-section {
+        @apply flex-col h-[700px] flex rounded-2xl overflow-hidden;
+    }
+    .play-section.full-screen-on .clicking-section{
+        @apply px-0 mx-0 h-[89vh];
+    }
     .goto-page-links {
         @apply grid sm:grid-cols-2 md:grid-cols-3 gap-y-1 md:gap-x-3 sm:gap-x-2 md:gap-y-5 sm:gap-y-3 mb-16 last:mb-0;
     }
@@ -81,6 +98,16 @@
     .big-button {
         @apply rounded-2xl h-16 grid place-items-center w-full text-2xl font-medium;
         @apply text-white bg-indigo-500 border-b-8 border-b-indigo-700 hover:border-b-indigo-800;
+    }
+
+    .toggle-checkbox:checked {
+        @apply: right-0 border-green-400;
+        right: 0;
+        border-color: #68D391;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+        @apply: bg-green-400;
+        background-color: #68D391;
     }
 }
 

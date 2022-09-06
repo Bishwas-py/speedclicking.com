@@ -11,11 +11,13 @@ import {
 
 import Counter from "../components/counter/Counter";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import BigButton from "../components/BigButton";
+import BigButton from "../components/buttons/BigButton";
 import getRank from "../helpers/rank";
 import useInterval from "../helpers/use_interval";
 import {useRouter} from "next/router";
 import Image from "next/image";
+import AppearanceToggle from "../components/buttons/AppearanceToggle";
+import FullScreenToggle from "../components/buttons/FullScreenToggle";
 
 
 export default function PageLayer({
@@ -30,6 +32,8 @@ export default function PageLayer({
     let [startTime, setStartTime] = React.useState(0);
     let [timeLeft, setTimeLeft] = React.useState(defaultTimeLeft);
     let [rank, setRank] = React.useState(false);
+    let [fullScreen, setFullScreen] = React.useState(false);
+
     let router = useRouter();
 
     function start(e) {
@@ -81,13 +85,13 @@ export default function PageLayer({
     }, (timeLeft && count) ? 1000 : null);
 
     return (
-        <div className={"mx-3"}>
+        <div className={`play-section select-none ${fullScreen ? 'full-screen-on' : 'full-screen-off'}`} onContextMenu={(event) => {  event.preventDefault(); }}>
+            <div className={"flex-row flex justify-between mb-2 rounded-2xl mx-6"}>
+                <AppearanceToggle/>
+                <FullScreenToggle setFullScreen={setFullScreen} fullScreen={fullScreen}/>
+            </div>
             <div
-                onContextMenu={(event) => {
-                    event.preventDefault();
-                }}
-                className={"flex-col flex mx-auto lg:w-[979px] rounded-2xl overflow-hidden"}>
-
+                className={"clicking-section"}>
                 <div className={"flex flex-col bg-gray-800 sm:flex-row"}>
                     <div className={"flex flex-row text-white w-full"}>
                         <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
@@ -98,12 +102,8 @@ export default function PageLayer({
                                  color={'#ad92ff'} shadow={'#6c55eb'}/>
                     </div>
                 </div>
-
-
                 {!timeLeft ?
-                    <div
-                        onContextMenu={(event) => { event.preventDefault(); }}
-                        className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
+                    <div className={"grid place-items-center w-full px-4 py-7 h-full bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
                         <div className={"text-center"}>
                             <div>
                                 <h2 className={"text-6xl font-bold mb-7"}>{rank.name}</h2>
@@ -139,11 +139,9 @@ export default function PageLayer({
                         </div>
                     </div>
                     :
-                    <div onContextMenu={(event) => {
-                        event.preventDefault();
-                    }}
+                    <div
                          onMouseDown={handleClick}
-                         className={"select-none relative w-full h-[500px] bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
+                         className={"select-none relative w-full h-full bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
                         <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
                                             h-full bg-slate-300/30 grid place-items-center`}>
                             <div className={"relative flex flex-col gap-4"}>

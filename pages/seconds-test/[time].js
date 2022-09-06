@@ -27,7 +27,7 @@ function ClickPage({time, sideValue, side}) {
     }
 
     return (
-        <Layout title={`${time} second${time > 1 ? 's' : ''} ${side} click CPS test`}>
+        <Layout title={`${time} second${time > 1 ? 's' : ''} ${side} click speed test`}>
             <Navbar/>
             <div className={"top-box"}>
                 <div className={"hero-section"}>

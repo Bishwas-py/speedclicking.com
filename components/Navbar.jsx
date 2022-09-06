@@ -56,7 +56,7 @@ function Navbar(props) {
             </Link>
             <Link href={'/left-click'}>
                 <a className={`menu-btn`}>
-                    <LeftClick className={"my-auto fill-gray-800"}/>
+                    <LeftClick className={"my-auto fill-gray-800 dark:fill-gray-50"}/>
                     <div className={'my-auto'}>Left Click</div>
                 </a>
             </Link>

@@ -9,7 +9,7 @@ function GotoPageButton({second, side='left'}) {
     return (
         <Link href={pageLink}>
             <a className={`goto-page-btn ${asPath === pageLink ? "active" : ""}`}>
-                <span className={'font-bold'}>{second}</span> SECOND{second > 1 && 'S'} TEST
+                <span className={'font-bold'}>{second}</span> SECOND{second > 1 ? 'S' : ''} TEST
             </a>
         </Link>
 

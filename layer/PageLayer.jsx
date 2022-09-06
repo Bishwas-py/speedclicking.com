@@ -102,9 +102,7 @@ export default function PageLayer({
 
                 {!timeLeft ?
                     <div
-                        onContextMenu={(event) => {
-                            event.preventDefault();
-                        }}
+                        onContextMenu={(event) => { event.preventDefault(); }}
                         className={"grid select-none place-items-center w-full px-4 py-7 min-h-[500px] bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
                         <div className={"text-center"}>
                             <div>

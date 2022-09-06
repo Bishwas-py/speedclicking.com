@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bed2a8b-a3b1-41a2-9665-1d522c3cf6a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BigButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BigButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layer/PageLayer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/layer/PageLayer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/seconds-test/[time].js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/seconds-test/[time].js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <workItem from="1662276355248" duration="23240000" />
       <workItem from="1662342666298" duration="6248000" />
       <workItem from="1662367980969" duration="155000" />
-      <workItem from="1662373822265" duration="8049000" />
+      <workItem from="1662373822265" duration="9353000" />
     </task>
     <servers />
   </component>

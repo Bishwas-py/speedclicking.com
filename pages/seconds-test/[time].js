@@ -27,11 +27,11 @@ function ClickPage({time, sideValue, side}) {
     }
 
     return (
-        <Layout title={`${time} second${time > 1 && 's'} ${smartSideName} Click CPS Test`}>
+        <Layout title={`${time} second${time > 1 ? 's' : ''} ${side} click CPS test`}>
             <Navbar/>
             <div className={"top-box"}>
                 <div className={"hero-section"}>
-                    <h1 className={"heading-1"}>{time} second{time > 1 && 's'} {side} click CPS Test</h1>
+                    <h1 className={"heading-1"}>{time} second{time > 1 ? 's' : ''} {side} click CPS test</h1>
                     <h2 className={"explanation"}>
                         {description}
                     </h2>

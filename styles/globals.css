@@ -61,13 +61,14 @@
     }
 
     .menu-btn {
-        @apply flex px-3 h-full gap-x-3 duration-150 cursor-pointer select-none relative;
+        @apply h-full flex flex-row gap-2 duration-150 cursor-pointer select-none relative;
     }
+
     .menu-btn.on {
         @apply border-b-black/5 border-b-8;
     }
     .menu-container {
-        @apply duration-100 absolute top-16 right-0 h-60 w-72 z-30;
+        @apply duration-100 h-60 w-72 z-30 absolute top-16 right-0;
         @apply bg-white/95 dark:bg-slate-700;
         @apply backdrop-blur rounded-xl flex py-2 flex-col overflow-y-scroll cute-scroll;
     }
@@ -77,6 +78,12 @@
 
     .menu-btn.off .menu-container {
         @apply scale-0;
+    }
+
+    .top-drop-nav {
+        @apply bg-opacity-0;
+        @apply static flex-row flex gap-3;
+        @apply bg-transparent;
     }
 
     .menu-item {

@@ -44,10 +44,17 @@
     }
 
     .menu-btn {
-        @apply flex px-3 focus:bg-black/5 h-full gap-x-3 cursor-pointer select-none relative;
+        @apply flex px-3 h-full gap-x-3 cursor-pointer select-none relative;
     }
     .menu-container {
-        @apply group-focus:scale-100 group-hover:scale-100 scale-0 duration-100 absolute top-5 right-0 w-72 z-30;
+        @apply duration-100 absolute top-5 right-0 w-72 z-30;
+    }
+    .menu-container.on {
+        @apply scale-100 bg-gradient-to-t from-black/5;
+    }
+
+    .menu-container.off {
+        @apply scale-0;
     }
     .menu-contained-box {
         @apply bg-white/95 dark:bg-slate-700;

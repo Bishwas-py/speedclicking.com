@@ -7,6 +7,8 @@ import {faChevronDown, faHandPointer, faMousePointer} from "@fortawesome/free-so
 import MenuItem from "./links/MenuItem";
 
 function Navbar(props) {
+    const [menuOpen, setMenuOpen] = React.useState(false);
+
     return (
         <div className={"flex gap-x-3 px-4 bg-white border-b dark:border-slate-700 shadow-xl shadow-gray-100 dark:shadow w-full h-16 dark:bg-jazzy-head"}>
             <Link href={'/'}>
@@ -15,11 +17,11 @@ function Navbar(props) {
                 </a>
             </Link>
             <div className={'my-auto h-full'}>
-                <button className={'menu-btn group'}>
+                <button className={'menu-btn group'} onBlur={()=>{setMenuOpen(false)}} onClick={()=>{setMenuOpen(!menuOpen)}}>
                     <FontAwesomeIcon icon={faMousePointer} className={"w-3 my-auto"}/>
                     <div className={'my-auto'}>CPS Tests</div>
                     <FontAwesomeIcon icon={faChevronDown} className={"w-3 my-auto"}/>
-                    <div className={'menu-container'}>
+                    <div className={`menu-container ${menuOpen ? 'on': 'off'}`}>
                         <div className={'menu-contained-box'}>
                             <MenuItem side={'left'} second={1}/>
                             <MenuItem side={'left'} second={3}/>

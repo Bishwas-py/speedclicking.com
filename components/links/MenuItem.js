@@ -11,7 +11,8 @@ function MenuItem({side='left', second}) {
     return (
         <Link href={pageLink}>
             <a className={`menu-item ${activeClass}`}>
-                <span className={'font-bold'}>{second} </span> second{second > 1 ? 's' : ''} <span className={'font-bold'}> {side} </span>CPS Test</a>
+                <span className={'font-bold'}>{second} </span> second{second > 1 ? 's' : ''} <span className={'font-bold'}> {side} </span>CPS Test
+            </a>
         </Link>
     );
 }

@@ -29,7 +29,7 @@
         @apply text-sm md:text-lg font-thin;
     }
     .play-section {
-        @apply mx-auto duration-100;
+        @apply px-3 sm:px-5 md:px-7 lg:px-0 mx-auto duration-100;
     }
     .play-section.full-screen-off {
         @apply lg:w-[979px] mx-auto;

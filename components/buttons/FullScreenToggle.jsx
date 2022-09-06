@@ -4,7 +4,7 @@ import {faMaximize, faMinimize} from "@fortawesome/free-solid-svg-icons";
 
 function FullScreenToggle({setFullScreen, fullScreen}) {
     return (
-        <button className={'flex gap-2 font-light'} onClick={()=>{setFullScreen(!fullScreen)}}>
+        <button className={'flex gap-2 font-light text-sm'} onClick={()=>{setFullScreen(!fullScreen)}}>
             {fullScreen ?
                 <>
                     <FontAwesomeIcon icon={faMinimize} className={'w-4 my-auto'}/>

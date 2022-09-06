@@ -15,12 +15,12 @@ function LinksMenu(props) {
 
     return (
         <div className={'my-auto h-full'}>
-            <button className={`menu-btn ${menuOpen ? 'on': 'off'}`} onBlur={handleBlur} onClick={()=>{setMenuOpen(!menuOpen)}}>
-                <div className={'flex my-auto px-3 gap-x-3'}>
+            <div className={`drop-menu ${menuOpen ? 'on': 'off'}`} onBlur={handleBlur} onClick={()=>{setMenuOpen(!menuOpen)}}>
+                <button className={'menu-btn'}>
                     <FontAwesomeIcon icon={faMousePointer} className={"w-3 my-auto"}/>
                     <div className={'my-auto'}>CPS Tests</div>
                     <FontAwesomeIcon icon={faChevronDown} className={"w-3 my-auto"}/>
-                </div>
+                </button>
                 <div className={`menu-container`}>
                     <MenuItem side={'left'} second={1}/>
                     <MenuItem side={'left'} second={3}/>
@@ -35,7 +35,7 @@ function LinksMenu(props) {
                     <MenuItem side={'left'} second={90}/>
                     <MenuItem side={'left'} second={100}/>
                 </div>
-            </button>
+            </div>
         </div>
     );
 }

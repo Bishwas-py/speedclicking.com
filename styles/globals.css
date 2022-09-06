@@ -59,25 +59,27 @@
         @apply bg-slate-300 border-b-slate-400;
         @apply dark:bg-slate-800 dark:border-b-slate-600/10 dark:shadow-slate-700/70 shadow;
     }
-
+    .drop-menu {
+        @apply h-full select-none relative;
+    }
     .menu-btn {
-        @apply h-full flex flex-row gap-2 duration-150 cursor-pointer select-none relative;
+        @apply h-full shrink-0 flex flex-row gap-2 duration-150 cursor-pointer;
     }
 
-    .menu-btn.on {
+    .drop-menu.on .menu-btn {
         @apply border-b-black/5 border-b-8;
     }
     .menu-container {
-        @apply duration-100 h-60 w-72 z-30 absolute top-16 right-0;
+        @apply duration-100 h-60 w-72 z-30;
         @apply bg-white/95 dark:bg-slate-700;
         @apply backdrop-blur rounded-xl flex py-2 flex-col overflow-y-scroll cute-scroll;
     }
-    .menu-btn.on .menu-container {
-        @apply scale-100;
+    .drop-menu.on .menu-container {
+        @apply scale-100 absolute top-20 right-0;
     }
 
-    .menu-btn.off .menu-container {
-        @apply scale-0;
+    .drop-menu.off .menu-container {
+        @apply scale-0 hidden;
     }
 
     .top-drop-nav {

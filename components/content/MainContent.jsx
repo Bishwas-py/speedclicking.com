@@ -16,9 +16,9 @@ function MainContent(props) {
             <div>
                 <h2 className={'heading-2 mb-2'}>What is a CPS Test?</h2>
                 <p className={'explanation'}>
-                    CPS Test is a kind of test if which you have to click a specific button of your mouse or keybord
-                    in order to know how much key strokes you can press in a given limitation of times. Basically,
-                    a test that allows you to know you clicking speed.
+                    CPS Test is a kind of test in which you have to click a specific button of your mouse or keyboard
+                    in order to know how many key strokes you can press in a given limitation of time. Basically,
+                    a test that allows you to know your clicking speed.
                 </p>
             </div>
 
@@ -26,7 +26,7 @@ function MainContent(props) {
             <div>
                 <h2 className={'heading-2 mb-2'}>How to take a CPS test?</h2>
                 <p className={'explanation'}>
-                    We have develop multiple CPS tests for you, to take a CPS test you can scroll up to the
+                    We have developed multiple CPS tests for you, to take a CPS test you can scroll up to the
                     <strong>&quot;CPS Timeframes&quot;</strong> section, and choose any CPS test that you feel comfortable with.
                 </p>
             </div>

@@ -18,6 +18,8 @@ import {useRouter} from "next/router";
 import Image from "next/image";
 import AppearanceToggle from "../components/buttons/AppearanceToggle";
 import FullScreenToggle from "../components/buttons/FullScreenToggle";
+import ClickingBox from "../components/section/play/ClickingBox";
+import ResultBox from "../components/section/play/ResultBox";
 
 
 export default function PageLayer({
@@ -102,59 +104,8 @@ export default function PageLayer({
                                  color={'#ad92ff'} shadow={'#6c55eb'}/>
                     </div>
                 </div>
-                {!timeLeft ?
-                    <div className={"grid place-items-center w-full px-4 py-7 h-full bg-slate-300 dark:bg-slate-700 overflow-hidden"}>
-                        <div className={"text-center"}>
-                            <div>
-                                <h2 className={"text-6xl font-bold mb-7"}>{rank.name}</h2>
-                                <h3 className={"text-xl"}>Your CPS result
-                                    is {countsPerSecond} ({count} Clicks
-                                    in {defaultTimeLeft} Seconds)</h3>
-                            </div>
-                            <div className={"my-3 w-full"}>
-                                <img src={rank.icon} width={'240px'} height={'240px'} alt={'Your Avatar'}
-                                     className={"mx-auto mb-4"} draggable={"false"}/>
-                            </div>
-                            <div>
-                                <h3 className={"text-sm font-light max-w-sm px-2 mx-auto"}>{rank.description}</h3>
-                            </div>
-
-                            {!timeLeft &&
-                                <div className={"flex flex-col w-72 mx-auto gap-2"}>
-                                    <button className={"group mt-4"} onClick={start}>
-                                        <BigButton>
-                                            <div className={"px-7 gap-3 flex justify-between w-full my-auto relative"}>
-                                                <div className={"my-auto w-10"}>
-                                                    <FontAwesomeIcon icon={faRedo}
-                                                                     className={"w-full group-hover:rotate-90 duration-300"}/>
-                                                </div>
-                                                <div className={"text-center w-full my-auto"}>RESTART</div>
-                                                <code className={'bg-gray-700 px-2 rounded-md'}>r</code>
-                                            </div>
-                                        </BigButton>
-                                    </button>
-                                    <small>Press &quot;<strong>r</strong>&quot; to restart</small>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                    :
-                    <div
-                         onMouseDown={handleClick}
-                         className={"select-none relative w-full h-full bg-slate-200 dark:bg-gray-700 overflow-hidden"}>
-                        <div className={`absolute opacity-80 ${count && 'opacity-0'} duration-200 w-full 
-                                            h-full bg-slate-300/30 grid place-items-center`}>
-                            <div className={"relative flex flex-col gap-4"}>
-                                <FontAwesomeIcon icon={faHandPointer}
-                                                 className={"text-6xl w-12 w-fit mx-auto -rotate-12"}/>
-                                <p className={"px-3"}>{startText}</p>
-                            </div>
-                        </div>
-                        <RippleButton>
-                            <Ripple color={rippleColor} duration={700}/>
-                        </RippleButton>
-                    </div>
-                }
+                <ResultBox count={count} rank={rank} timeLeft={timeLeft} countsPerSecond={countsPerSecond} start={start} defaultTimeLeft={defaultTimeLeft}/>
+                <ClickingBox count={count} setCount={setCount} rippleColor={rippleColor} handleClick={handleClick} startText={startText} timeLeft={timeLeft}/>
             </div>
         </div>
     )

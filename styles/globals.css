@@ -98,7 +98,11 @@
         @apply text-purple-700;
         @apply dark:text-purple-100;
     }
-
+    .result-box {
+        @apply grid place-items-center;
+        @apply w-full h-full px-4 py-7 overflow-hidden;
+        @apply bg-slate-300 dark:bg-slate-700;
+    }
     .text-box {
         @apply p-6 rounded-xl border-l-8;
         @apply bg-indigo-100 border-indigo-200;

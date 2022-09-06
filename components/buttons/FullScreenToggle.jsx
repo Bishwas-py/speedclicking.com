@@ -8,7 +8,7 @@ function FullScreenToggle({setFullScreen, fullScreen}) {
             {fullScreen ?
                 <>
                     <FontAwesomeIcon icon={faMinimize} className={'w-4 my-auto'}/>
-                    <div className={'my-auto'}>Exit full screen</div>
+                    <div className={'my-auto hidden sm:block'}>Exit full screen</div>
                 </>
                 :
                 <>

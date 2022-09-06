@@ -84,7 +84,7 @@
 
     .top-drop-nav {
         @apply bg-opacity-0;
-        @apply static flex-row flex gap-5;
+        @apply static flex-row hidden md:flex gap-5;
         @apply bg-transparent;
     }
 

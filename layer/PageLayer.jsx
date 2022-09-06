@@ -86,7 +86,7 @@ export default function PageLayer({
 
     return (
         <div className={`play-section select-none ${fullScreen ? 'full-screen-on' : 'full-screen-off'}`} onContextMenu={(event) => {  event.preventDefault(); }}>
-            <div className={"flex-row flex justify-between mb-2 rounded-2xl mx-6"}>
+            <div className={"flex-row flex justify-between mb-2 rounded-2xl mx-3 sm:mx-6"}>
                 <AppearanceToggle/>
                 <FullScreenToggle setFullScreen={setFullScreen} fullScreen={fullScreen}/>
             </div>

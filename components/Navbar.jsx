@@ -1,9 +1,10 @@
+import dynamic from 'next/dynamic';
+
 import React from 'react';
 import Wrap from "./wraps/Wrap";
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
-    faBars,
     faComputerMouse
 } from "@fortawesome/free-solid-svg-icons";
 import LeftClick from "../icons/left-click";
@@ -11,6 +12,7 @@ import LeftClick from "../icons/left-click";
 import LinksMenu from "./links/menu/LinksMenu";
 
 function Navbar(props) {
+
     return (
         <div className={"justify-around md:justify-around flex gap-x-3 pl-2 md:px-4 bg-white border-b dark:border-slate-700 shadow-xl shadow-gray-100 dark:shadow w-full h-16 dark:bg-jazzy-head"}>
             <Link href={'/'}>

@@ -2,14 +2,22 @@ import React from 'react';
 import {useTheme} from "next-themes";
 
 function AppearanceToggle(props) {
-    const {theme, setTheme} = useTheme()
+    const {theme, setTheme, systemTheme} = useTheme()
+
+    function handleThemeChange() {
+        if (theme==='system') {
+            setTheme(systemTheme === 'dark' ? 'light' : 'dark')
+        } else {
+            setTheme(theme === 'dark' ? 'light' : 'dark')
+        }
+    }
 
     return (
         <button>
             <span
                 className="relative inline-block w-10 mr-2 align-middle transition duration-200 ease-in">
                 <input type="checkbox"
-                       onClick={() => {console.log(theme);setTheme(theme === 'light' ? 'dark' : 'light')}}
+                       onClick={ handleThemeChange }
                        defaultChecked={theme === 'dark'}
                        name="toggle" id="appearanceToggle"
                        className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>

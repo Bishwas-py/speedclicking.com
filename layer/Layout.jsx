@@ -6,6 +6,7 @@ function Layout({className='', title="CPS Test", children}) {
     return (
         <main className={className}>
             <div>
+                <Script strategy={"lazyOnload"} src={`https://www.googletagmanager.com/gtag/js?id=G-MQMPTMDET6`}/>
                 <Script strategy={"lazyOnload"} dangerouslySetInnerHTML={{
                     __html: `
                         window.dataLayer = window.dataLayer || [];

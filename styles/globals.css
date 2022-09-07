@@ -89,7 +89,7 @@
     }
 
     .play-section.full-screen-on .result-counter {
-        @apply md:py-12 md:px-3 md:border-b-0 md:border-r-8 md:h-full;
+        @apply md:justify-center md:px-3 md:border-b-0 md:border-r-8 md:h-full;
     }
 
     .play-section.full-screen-on .result-counter .top-counter {

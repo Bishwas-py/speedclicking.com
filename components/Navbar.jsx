@@ -14,7 +14,7 @@ import LinksMenu from "./links/menu/LinksMenu";
 function Navbar(props) {
 
     return (
-        <div className={"justify-around md:justify-around flex gap-x-3 pl-2 md:px-4 bg-white border-b dark:border-slate-700 shadow-xl shadow-gray-100 dark:shadow w-full h-16 dark:bg-jazzy-head"}>
+        <nav className={"justify-around md:justify-around flex gap-x-3 pl-2 md:px-4 bg-white border-b dark:border-slate-700 shadow-xl shadow-gray-100 dark:shadow w-full h-16 dark:bg-jazzy-head"}>
             <Link href={'/'}>
                 <a className={"w-fit self-center font-extrabold sm:text-sm md:text-xl lg:text-2xl"}>
                     SPEED <Wrap>CLICKING</Wrap>
@@ -35,7 +35,7 @@ function Navbar(props) {
                     </a>
                 </Link>
             </div>
-        </div>
+        </nav>
     );
 }
 

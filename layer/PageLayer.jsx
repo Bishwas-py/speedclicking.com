@@ -94,8 +94,8 @@ export default function PageLayer({
             </div>
             <div
                 className={"clicking-section"}>
-                <div className={"flex flex-col bg-gray-800 sm:flex-row"}>
-                    <div className={"flex flex-row text-white w-full"}>
+                <div className={"result-section"}>
+                    <div className={"result-section-container"}>
                         <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
                                  color={'#7adb1f'} shadow={'#5aa118'}/>
                         <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}

@@ -41,7 +41,7 @@ function MainContent(props) {
                 <h2 className={'heading-2 mb-2'}>Motivation behind this web app.</h2>
                 <div className={'space-y-3'}>
                     <p className={'explanation'}>
-                        Hey, making a this clicking game was pretty fun, and the best part is it{"'"}s getting popular
+                        Making this clicking game was pretty fun, and the best part is it{"'"}s getting popular
                         day by day. I was
                         wandering around with some of my projects, and suddenly my brother appeared with his
                         extraordinary idea <FontAwesomeIcon icon={faLightbulb}

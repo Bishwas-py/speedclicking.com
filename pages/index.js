@@ -21,7 +21,7 @@ function RightClick(props) {
     }
 
     return (
-        <Layout className={""}>
+        <Layout title={"Test your click speed"}>
             <Navbar/>
             <div className={"top-box"}>
                 <div className={"hero-section"}>

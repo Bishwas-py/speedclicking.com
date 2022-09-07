@@ -39,9 +39,8 @@ function RightClick(props) {
                     setCount={setCount} count={count}
                     rippleColor={rippleColor}/>
 
-                <GotoPagesLinksBox/>
-
                 <MainContent/>
+                <GotoPagesLinksBox/>
             </div>
         </Layout>
     );

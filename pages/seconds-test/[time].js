@@ -45,9 +45,8 @@ function ClickPage({time, sideValue, side}) {
                     setCount={setCount} count={count}
                     rippleColor={rippleColor}/>
 
-                <GotoPagesLinksBox/>
-
                 <MainContent/>
+                <GotoPagesLinksBox/>
             </div>
         </Layout>
     );

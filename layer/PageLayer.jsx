@@ -95,7 +95,7 @@ export default function PageLayer({
             <div
                 className={"clicking-section"}>
                 <div className={"result-section"}>
-                    <div className={"result-section-container"}>
+                    <div className={"result-counter-container"}>
                         <Counter icon={faClock} title={"TIMER"} value={timeLeft.toFixed(2) || '0.00'}
                                  color={'#7adb1f'} shadow={'#5aa118'}/>
                         <Counter icon={faGaugeHigh} title={"CLICK/SECS"} value={countsPerSecond || '0.00'}

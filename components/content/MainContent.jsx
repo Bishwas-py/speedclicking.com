@@ -59,7 +59,7 @@ function MainContent(props) {
                     <p className={'explanation'}>
                         And I thought <b>{"'why not I develop it'"}</b>? And then I developed it, and added those
                         features that he wanted.
-                        Features like fullscreen and a huge place to test his clicking speed. Also, I though adding a
+                        Features like fullscreen and a huge place to test his clicking speed. Also, I thought adding a
                         dark mode toggling
                         feature would be awesome. And finally it was ready.
                     </p>

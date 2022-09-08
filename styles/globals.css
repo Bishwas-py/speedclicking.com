@@ -204,7 +204,7 @@
     }
 
     .word-with-meaning .word{
-        @apply px-2 py-0.5 cursor-pointer rounded;
+        @apply px-2 py-0.5 cursor-pointer rounded select-none;
     }
     .word-with-meaning.display-meaning .word{
         @apply bg-slate-600 dark:bg-slate-200 text-white dark:text-slate-900 font-medium;
@@ -213,7 +213,7 @@
         @apply bg-slate-100 dark:bg-slate-700;
     }
     .word-with-meaning.display-meaning .meaning {
-        @apply block;
+            @apply block;
     }
 
     .word-with-meaning.hide-meaning .meaning {

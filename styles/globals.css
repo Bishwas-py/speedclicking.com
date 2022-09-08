@@ -47,7 +47,7 @@
     }
 
     .word-with-meaning.display-meaning .meaning {
-        @apply block;
+        @apply py-0.5 px-1 mx-1;
     }
 
     .word-with-meaning.hide-meaning .meaning {

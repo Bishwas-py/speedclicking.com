@@ -7,7 +7,7 @@ function Layout({className='', title="CPS Test", children}) {
         <main className={className}>
             {/* UA */}
             <Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=UA-175300558-13`}/>
-            <Script id={"google-analytics"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
+            <Script id={"google-analytics-ua"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
                 __html: `
                           window.dataLayer = window.dataLayer || [];
                           function gtag(){dataLayer.push(arguments);}
@@ -17,9 +17,9 @@ function Layout({className='', title="CPS Test", children}) {
                     `
             }}/>
 
-            {/* G4 */}
+            {/* GA4 */}
             <Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=G-W0Y2C5X29X`}/>
-            <Script id={"google-analytics"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
+            <Script id={"google-analytics-ga4"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
                 __html: `
                       window.dataLayer = window.dataLayer || [];
                       function gtag(){dataLayer.push(arguments);}

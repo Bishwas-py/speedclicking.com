@@ -5,16 +5,30 @@ import Script from "next/script";
 function Layout({className='', title="CPS Test", children}) {
     return (
         <main className={className}>
-            <Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=G-MQMPTMDET6`}/>
+            {/* UA */}
+            <Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=UA-175300558-13`}/>
             <Script id={"google-analytics"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
                 __html: `
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                    
-                        gtag('config', 'G-MQMPTMDET6');
+                          window.dataLayer = window.dataLayer || [];
+                          function gtag(){dataLayer.push(arguments);}
+                          gtag('js', new Date());
+                        
+                          gtag('config', 'UA-175300558-13');
                     `
             }}/>
+
+            {/* G4 */}
+            <Script strategy={"afterInteractive"} src={`https://www.googletagmanager.com/gtag/js?id=G-W0Y2C5X29X`}/>
+            <Script id={"google-analytics"} strategy={"afterInteractive"} dangerouslySetInnerHTML={{
+                __html: `
+                      window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());
+                    
+                      gtag('config', 'G-W0Y2C5X29X');
+                    `
+            }}/>
+
             <Head>
                 <title>{`${title} | Speed Clicking`}</title>
                 <meta name="description" content="A speed clicking test to see how many clicks per second you can do. Speed Clicking helps you to increase your CPS [click per second] rates."/>

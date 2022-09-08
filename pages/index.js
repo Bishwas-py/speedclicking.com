@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Layout from "../layer/Layout";
 import GotoPagesLinksBox from "../components/links/goto/GotoPagesLinksBox";
 import MainContent from "../components/content/MainContent";
+import Wrap from "../components/wraps/Wrap";
+import WordWithMeaning from "../components/wraps/WordWithMeaning";
 
 function RightClick(props) {
     let defaultTimeLeft = 10;
@@ -26,8 +28,11 @@ function RightClick(props) {
             <div className={"top-box"}>
                 <div className={"hero-section"}>
                     <h1 className={"heading-1"}>Speed Clicking CPS Test</h1>
-                    <h2 className={"explanation"}>This simple and free CPS (Clicks per Second)
-                        tester will help you determine your mouse or finger tap speed.
+                    <h2 className={"explanation max-w-3xl mx-auto"}>
+                        You can use this free CPS checker/enhancer to test and enhance your {' '}
+                        <WordWithMeaning word={'speed clicking'}>
+                            Speed Clicking is a very essential skill for playing games like Minecraft, Fortnite, and other.
+                        </WordWithMeaning> skills.
                     </h2>
                 </div>
                 <PageLayer

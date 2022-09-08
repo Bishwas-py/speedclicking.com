@@ -31,7 +31,7 @@
     }
 
     .explanation {
-        @apply text-sm md:text-lg font-thin;
+        @apply text-sm md:text-[1.015rem] font-thin;
     }
 
     .play-section {
@@ -39,7 +39,7 @@
     }
 
     .play-section.full-screen-off {
-        @apply lg:w-[979px] mx-auto;
+        @apply lg:w-[979px] mx-auto md:mt-11;
     }
 
     .play-section.full-screen-on {
@@ -201,6 +201,23 @@
     .toggle-checkbox:checked + .toggle-label {
         @apply: bg-green-400;
         background-color: #68D391;
+    }
+
+    .word-with-meaning .word{
+        @apply px-2 py-0.5 cursor-pointer rounded;
+    }
+    .word-with-meaning.display-meaning .word{
+        @apply bg-slate-600 dark:bg-slate-200 text-white dark:text-slate-900 font-medium;
+    }
+    .word-with-meaning.hide-meaning .word{
+        @apply bg-slate-100 dark:bg-slate-700;
+    }
+    .word-with-meaning.display-meaning .meaning {
+        @apply block;
+    }
+
+    .word-with-meaning.hide-meaning .meaning {
+        @apply hidden;
     }
 }
 

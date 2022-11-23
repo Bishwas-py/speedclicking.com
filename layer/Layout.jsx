@@ -39,6 +39,9 @@ function Layout({className='', title="CPS Test", children}) {
                 <meta property="og:image" content="https://www.speedclicking.com/speed-clicking.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
+                <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6606810145118251"
+                        crossOrigin="anonymous"></script>
             </Head>
 
             {children}

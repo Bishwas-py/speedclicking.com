@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Speed clicking
 
-## Getting Started
+[Speed Clicking](https://www.speedclicking.com/) is a skill that is used in many games. It is the ability to click as
+fast as possible.
+And this repository is a codebase for a speed clicking game.
 
-First, run the development server:
+## How to play
+
+The game is simple. You have 10 seconds to click as many times as possible, or you can set your own time.
+Just click this [link](https://www.speedclicking.com/) and start clicking.
+
+## How to run locally
+
+To run this project locally, you need to have [Node.js](https://nodejs.org/en/) installed on your computer.
+Then you need to clone this repository and run the following commands in the terminal:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Story
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Making this clicking game was pretty fun, and the best part is it's getting popular day by day. I was wandering around
+with some of my projects, and suddenly my brother appeared with his extraordinary idea .
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+He is a 14 years old kid, who plays Minecraft, and he loves doing it. I was just traveling towards his room and I got to
+know he wants a feature to be added to a web app he uses to increase his Minecraft PVP skills; more specifically
+clicking skills.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+And I thought 'why not I develop it'? And then I developed it, and added those features that he wanted. Features like
+fullscreen and a huge place to test his clicking speed. Also, I thought adding a dark mode toggling feature would be
+awesome. And finally it was ready.
 
-## Learn More
+I hope you'd love this result of collaboration between me and my 14 years old brother.
 
-To learn more about Next.js, take a look at the following resources:
+## How to contribute
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you wanna be a part of this small story, you can contribute to this project. Just fork this repository, make changes,
+and create a pull request. I'll review it and merge it if it's good.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Me
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I'm [Bishwas Bhandari](https://bishwas.net/), a ~~16~~ 21 years old web developer from Nepal. I love making 
+web apps, a full-stack developer, wanting to be a programmer.
